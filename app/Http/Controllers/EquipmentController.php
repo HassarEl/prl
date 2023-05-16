@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipment;
 use Illuminate\Http\Request;
 
 class EquipmentController extends Controller
@@ -11,7 +12,8 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        return view('equipments.index');
+        $equipments = Equipment::all();
+        return view('equipments.index', compact('equipments'));
     }
 
     /**
@@ -19,7 +21,7 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipments.create');
     }
 
     /**
@@ -27,7 +29,17 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipment = new Equipment();
+
+        $equipment->name = $request->name;
+        $equipment->description = $request->description;
+        $equipment->disponibilite = $request->disponibilite;
+        $equipment->quantite = $request->quantite;
+        $equipment->dure_vie = $request->dure_vie;
+
+        $equipment->save();
+
+        return redirect()->route('equipment.index')->with('message', 'Equipment Has Been Added Seccessfuly');
     }
 
     /**
@@ -35,7 +47,8 @@ class EquipmentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $equipment = Equipment::find($id);
+        return view('equipments.show', compact('equipment'));
     }
 
     /**
@@ -43,7 +56,9 @@ class EquipmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $equipment = Equipment::find($id);
+
+        return view('equipments.edit', compact('equipment'));
     }
 
     /**
@@ -51,7 +66,17 @@ class EquipmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $equipment = Equipment::find($id);
+
+        $equipment->name = $request->name;
+        $equipment->description = $request->description;
+        $equipment->disponibilite = $request->disponibilite;
+        $equipment->quantite = $request->quantite;
+        $equipment->dure_vie = $request->dure_vie;
+
+        $equipment->save();
+
+        return redirect()->route('equipment.index')->with('message', 'Equipment Has Been Updated Seccessfuly');
     }
 
     /**
@@ -59,6 +84,8 @@ class EquipmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Equipment::destroy($id);
+
+        return redirect()->route('equipment.index')->with('message', 'Equipment Has Been Deleted');
     }
 }

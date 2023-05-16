@@ -23,7 +23,7 @@ class RoomController extends Controller
         $rooms->ability = $request->ability;
         $rooms->equipment_id = $request->equipment_id;
         $rooms->save();
-        return redirect()->route('rooms')->with('message', 'room Has Been Added Seccessfuly');
+        return redirect()->route('salles')->with('message', 'room Has Been Added Seccessfuly');
 
     }
 }

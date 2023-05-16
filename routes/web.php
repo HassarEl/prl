@@ -31,7 +31,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // Equipement Route
-Route::resource('/equipment', EquipmentController::class);
+Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment.index');
+Route::get('/equipment/create', [EquipmentController::class, 'create'])->name('equipment.create');
+Route::post('/equipment/create', [EquipmentController::class, 'store'])->name('equipment.store');
+Route::get('/equipment/{id}', [EquipmentController::class, 'show'])->name('equipment.show');
+Route::get('/equipment/{id}/edit', [EquipmentController::class, 'edit'])->name('equipment.edit');
+Route::post('/equipment/{id}/edit', [EquipmentController::class, 'update'])->name('equipment.update');
+Route::delete('/equipment/{id}', [EquipmentController::class, 'destroy'])->name('equipment.destroy');
 
 // Room Route
 Route::get('/salles', [RoomController::class, 'index'])->name('salles');

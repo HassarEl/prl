@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('equipment', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
+            $table->boolean('disponibilite')->default(false);
+            $table->integer('quantite')->default(0);
+            $table->date('dure_vie')->nullable();
             $table->timestamps();
         });
     }

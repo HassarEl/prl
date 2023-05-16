@@ -48,4 +48,9 @@
 <script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
 <script src="assets/js/vector-maps.js"></script> -->
 
+<script>
+    const alertList = document.querySelectorAll('.alert')
+    const alerts = [...alertList].map(element => new bootstrap.Alert(element))
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 @yield('scripts')

@@ -56,37 +56,10 @@
 
                 {{-- Menu SideBar --}}
                 <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button" data-toggle="collapse" href="#layouts_menu">
+                    <a class="sidebar-menu-button"  href="{{route('equipment.index')}}">
                         <i class="bi bi-grid-fill"></i>
                         <span class="pl-4 sidebar-menu-text">Equipments</span>
-                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
                     </a>
-                    <ul class="sidebar-submenu collapse" id="layouts_menu">
-                        <li class="sidebar-menu-item active">
-                            <a class="sidebar-menu-button" href="index.html">
-                                <i class="bi bi-plus-circle"></i>
-                                <span class="sidebar-menu-text">Ajouter Equipment</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="{{url('/equipment')}}">
-                                <i class="bi bi-eye"></i>
-                                <span class="sidebar-menu-text">Voire Equipments</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="">
-                                <i class="bi bi-pencil-square"></i>
-                                <span class="sidebar-menu-text">Modifier Equipment</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-menu-item">
-                            <a class="sidebar-menu-button" href="">
-                                <i class="bi bi-trash3"></i>
-                                <span class="sidebar-menu-text">Supprimer Equipments</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
             
