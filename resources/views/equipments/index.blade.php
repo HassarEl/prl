@@ -28,12 +28,11 @@
   @endif
 
   <div class="row">
-    <div class="col-md-2 pl-5 pb-2">
+    <div class="col-md-2 pl-3 pb-2">
         <a class="btn btn-primary" href="{{route('equipment.create')}}" title="Add New Doctor">Ajouter un Equipment</a>
     </div>
 </div>
 </div>
-<section class="content pl-5 pr-5">
 
   <div class="card">
     <div class="card-header">
@@ -43,7 +42,7 @@
     <div class="card-body p-0">
       <table class="table table-striped projects">
           <thead>
-              <tr align="center">
+              <tr>
                   <th>
                       Nom
                   </th>
@@ -81,25 +80,25 @@
                   <td>
                       {{$equipment->dure_vie}}
                   </td>
-                  <td class="project-actions" align="center">
-                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                      {{-- <button type="button" class="btn btn-danger">Left</button>
-                      <button type="button" class="btn btn-warning">Middle</button>
-                      <button type="button" class="btn btn-success">Right</button> --}}
-                    
-                      <a  class="btn btn-info" href="{{ url('/equipment/' . $equipment->id) }}">
-                          <i class="fa fa-eye"></i>
+                  <td>
+                    <div class="row">
+                      <div class="col-4">
+                        <a  class="btn btn-info" href="{{ url('/equipment/' . $equipment->id) }}">
                           voir
-                      </a>
-                      <a class="btn btn-success" href="{{ url('/equipment/' . $equipment->id . '/edit/') }}">
-                          <i class="fas fa-pencil-alt"></i>
+                        </a>
+                      </div>
+                      <div class="col-4">
+                        <a class="btn btn-success" href="{{ url('/equipment/' . $equipment->id . '/edit/') }}">
                           Modifier
-                      </a>
-                      <form method="POST" action="{{ url('/equipment' . '/' . $equipment->id) }}" accept-charset="UTF-8" style="display:inline">
+                        </a>
+                      </div>
+                      <div class="col-4">
+                        <form method="POST" action="{{ url('/equipment' . '/' . $equipment->id) }}" accept-charset="UTF-8">
                           {{ method_field('DELETE') }}
                           {{ csrf_field() }}
-                          <button type="submit" class="btn btn-danger" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                          <button type="submit" class="btn btn-danger" title="Delete Doctor" onclick="return confirm('Confirm delete?')">Delete</button>
                       </form>
+                      </div>
                     </div>
                   </td>
               </tr>    
@@ -111,8 +110,6 @@
 
   </div>
 
-
-</section>
 @endsection
 
 @section('scripts')

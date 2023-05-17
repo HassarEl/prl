@@ -13,7 +13,7 @@
 @endsection
 
 @section('title_header')
-    Create Salle
+    Modifier La Salle 
 @endsection
 
 @section('content')
@@ -30,40 +30,39 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>
                 @endif
-                <h2 class="card-title">Ajouter Salle</h2>
+                <h2 class="card-title">Modifier Salle</h2>
 
-                <form class="forms-sample" action="{{route('store.store')}}" method="POST" enctype="multipart/form-data">
+                <form class="forms-sample" action="{{url('/salles/'. $room->id .'/edit')}}" method="POST" enctype="multipart/form-data">
                   @csrf
 
                   <div class="form-group row">
                     <label for="name" class="col-sm-3 col-form-label">Name</label>
                     <div class="col-sm-9">
-                      <input required type="text" class="form-control" name="name" id="exampleInputUsername2" placeholder="Nom de salle">
+                      <input required type="text" class="form-control" value="{{$room->name}}" name="name" id="exampleInputUsername2" placeholder="Nom de salle">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="number" class="col-sm-3 col-form-label">Numero</label>
                     <div class="col-sm-9">
-                      <input required type="number" class="form-control" name="number" id="exampleInputUsername2" placeholder="Numero de salle">
+                      <input required type="number" class="form-control" value="{{$room->number}}" name="number" id="exampleInputUsername2" placeholder="Numero de salle">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="quantite" class="col-sm-3 col-form-label">Capacité</label>
                     <div class="col-sm-9">
-                      <input type="number" name="quantite" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
+                      <input type="number" name="quantite" value="{{$room->quantite}}" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="etage" class="col-sm-3 col-form-label">Etage</label>
                     <div class="col-sm-9">
-                      <input type="number" name="etage" class="form-control" id="exampleInputEmail2" placeholder="Etage">
+                      <input type="number" name="etage" value="{{$room->etage}}" class="form-control" id="exampleInputEmail2" placeholder="Etage">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="equipment_id" class="col-sm-3 col-form-label">Equipment</label>
                     <div class="col-sm-9">
                         <select style="color: #6C708C;" name="equipment_id" class="form-control" id="exampleSelectGender">
-                            <option selected>--Select--</option>
                             @foreach($equipments as $equipment)
                             <option value="{{$equipment->id}}">{{$equipment->name}}</option>
                             @endforeach
@@ -73,7 +72,7 @@
                   <div class="form-group row">
                     <label for="descriptions" class="col-sm-3 col-form-label">Description</label>
                     <div class="col-sm-9">
-                      <input required type="text" class="form-control" name="descriptions" id="exampleInputUsername2" placeholder="Descriptions">
+                      <input required type="text" class="form-control" value="{{$room->descriptions}}" name="descriptions" id="exampleInputUsername2" placeholder="Descriptions">
                     </div>
                   </div>
                   <div class="form-group row">

@@ -43,6 +43,10 @@ Route::delete('/equipment/{id}', [EquipmentController::class, 'destroy'])->name(
 Route::get('/salles', [RoomController::class, 'index'])->name('salles');
 Route::get('/salles/create', [RoomController::class, 'create'])->name('createSalle');
 Route::post('/salles/create', [RoomController::class, 'store'])->name('store.store');
+Route::get('/salles/{id}', [RoomController::class, 'show'])->name('salles.show');
+Route::get('/salles/{id}/edit', [RoomController::class, 'edit'])->name('salle.edit');
+Route::post('/salles/{id}/edit', [RoomController::class, 'update'])->name('salle.update');
+Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.destroy');
 
 
 require __DIR__.'/auth.php';

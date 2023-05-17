@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('ability');
-            $table->foreignId('equipment_id')->constrained()->onDelete('cascade');
+            $table->integer('quantite');
+            $table->string('descriptions');
+            $table->integer('etage');
+            $table->string('number');
+            $table->foreignId('equipment_id')->constrained();
             $table->timestamps();
         });
     }

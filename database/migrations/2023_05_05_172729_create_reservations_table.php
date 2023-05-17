@@ -17,8 +17,8 @@ return new class extends Migration
             $table->time('heureDebut');
             $table->time('heureFin');
             $table->string('title_reunion');
-            $table->foreignId('room_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('room_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

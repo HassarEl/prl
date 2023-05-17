@@ -18,6 +18,12 @@
 
 @section('content')
     <div class="container">
+      @if (session()->has('message'))
+        <div class="alert alert-success  alert-dismissible fade show" role="alert">
+          {{session()->get('message')}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
+        </div>
+      @endif
             <!-- Card salles -->
             <div class="page-section">
                 <div class="container">
@@ -26,6 +32,7 @@
                     <div class="row">
 
                         <!-- card 1-->
+                     @foreach ($rooms as $room)   
                     <div class="col-lg-4">
                         <div class="item">
                             <div class="card">
@@ -33,55 +40,16 @@
                                 <img style="height: 150px !important;" src="{{asset('assets/images/maroc_logo.png')}}" alt="">
                               </div>
                               <div class="card-body">
-                                <p class="text-xl mb-0">Num Salle</p>
-                                <span class="text-sm text-grey">Capacity</span>
-                                <div class="meta">
-                                    <a href="#"><span class="mai-call">View Content</span></a>
-                                </div>
+                                <p class="text-xl mb-0">{{$room->name}}</p>
+                                <span class="text-sm text-grey">{{$room->quantite}}</span>
+                                <br>
+                                <br>
+                                <a class="btn btn-primary" href="{{url('salles/'. $room->id)}}">View Content</a>
                               </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- card 2-->
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="card">
-                              <div class="card-header">
-                                <img style="height: 150px !important;" src="{{asset('assets/images/maroc_logo.png')}}" alt="">
-                              </div>
-                              <div class="card-body">
-                                <p class="text-xl mb-0">Num Salle</p>
-                                <span class="text-sm text-grey">Capacity</span>
-                                <div class="meta">
-                                    <a href="#"><span class="mai-call">View Content</span></a>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- card 3-->
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="card">
-                              <div class="card-header">
-                                <img style="height: 150px !important;" src="{{asset('assets/images/maroc_logo.png')}}" alt="">
-                              </div>
-                              <div class="card-body">
-                                <p class="text-xl mb-0">Num Salle</p>
-                                <span class="text-sm text-grey">Capacity</span>
-                                <div class="meta">
-                                    <a href="#"><span class="mai-call">View Content</span></a>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
+                    @endforeach
                     </div>
                     <!-- End Row -->
             
