@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->date('date_reservation');
             $table->time('heureDebut');
-            $table->time('heureFin');
+            $table->decimal('duree', 5, 2)->default(0);
             $table->string('title_reunion');
+            $table->string('description');
+            $table->string('piece_jointe')->nullable();
             $table->foreignId('room_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
