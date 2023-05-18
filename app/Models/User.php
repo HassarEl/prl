@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function room(): BelongsToMany
+    {
+        return $this->belongsToMany(Room::class, 'reservations', 'user_id', 'room_id');
+    }
 }

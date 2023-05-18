@@ -11,8 +11,9 @@ class Equipment extends Model
     use HasFactory;
     protected $primaryKey = 'id';
 
-    public function room(){
-        return $this->belongsTo(Room::class);
+    public function room(): BelongsToMany
+    {
+        return $this->belongsToMany(Room::class, 'equipment_rooms', 'equipment_id', 'room_id');
     }
 
 }
