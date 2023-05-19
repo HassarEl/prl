@@ -21,10 +21,15 @@ class HomeController extends Controller
             {  
                 return view('chefService.index');
             }
+            else if(Auth::user()->profil=='user') 
+            {
+                return view('visiteurs.index');
+            }
         }
         else
         {
-            return redirect()->route('login');
+            // return redirect()->route('login');
+            return view('visiteurs.index');
         }
     }
 }
