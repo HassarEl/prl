@@ -11,17 +11,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 
-  	<!-- Facebook and Twitter integration -->
-	{{-- <meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" /> --}}
-
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400, 900" rel="stylesheet"> -->
 	
 	<!-- Animate.css -->
@@ -61,23 +50,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-2 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Just<em>ice</em></a></div>
+					<div id="gtco-logo"><a href="{{url('/')}}">Roayome<em>Du</em>MAROC</a></div>
 				</div>
 				<div class="col-sm-10 text-right menu-1 main-nav">
-					{{-- <ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="practice-areas">Practice Areas</a></li>
-						<li><a href="#" data-nav-section="our-team">Our Team</a></li>
-						<li class="btn-cta"><a href="#" data-nav-section="contact"><span>Contact</span></a></li>
-                        <li class="btn-cta">
-                            
-                        </li>
-                        
-                        
-                        <!-- For external page link -->
-						<!-- <li><a href="http://gettemplates.co/" class="external">External</a></li> -->
-					</ul> --}}
 
                     <ul class="nav justify-content-end">
                         <li class="nav-item">

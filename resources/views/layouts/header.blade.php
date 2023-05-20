@@ -173,33 +173,31 @@
                     <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-border navbar-height align-items-center">
                         <li class="nav-item dropdown">
                             <a href="#account_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
-                                <!-- <img src="assets/images/avatar/demi.png" class="rounded-circle" width="40" alt="Frontted"> -->
+                                <!-- <img src="asset('assets/images/avatar/demi.png')" class="rounded-circle" width="40" alt="Frontted"> -->
                                 <span class="avatar avatar-sm">
                                     <span class="avatar-title rounded-circle bg-warning">AD</span>
                                 </span>
                             </a>
                             <div id="account_menu" class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-item-text dropdown-item-text--lh">
-                                    <div><strong>Adrian Demian</strong></div>
-                                    <div>@adriandemian</div>
+                                    <div><strong>{{auth()->user()->name}}</strong></div>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item active" href="index.html">Dashboard</a>
-                                <a class="dropdown-item" href="profile.html">My profile</a>
-                                <a class="dropdown-item" href="edit-account.html">Edit account</a>
-                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{route('profile.edit')}}">My profile</a>
+                                <a class="dropdown-item" href="{{route('password.confirm')}}">Edit account</a>
                                 
-
-                                <form method="POST" action="{{route('logout')}}">
-                                    @csrf
-                                  <a class="dropdown-item preview-item" id="in" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    this.closest('form').submit(); " role="button">
-                                    <div class="preview-item-content">
-                                      <p class="preview-subject mb-1">{{ __('Log Out') }}</p>
-                                    </div>
-                                  </a>
-                                </form>
-
+                                <div class="dropdown-item">
+                                    <form method="POST" action="{{route('logout')}}">
+                                        @csrf
+                                      <a class="dropdown-item preview-item" id="in" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        this.closest('form').submit(); " role="button">
+                                        <div class="preview-item-content">
+                                          <p class="preview-subject mb-1">{{ __('Log Out') }}</p>
+                                        </div>
+                                      </a>
+                                    </form>
+                                </div>
+                                
                             </div>
                         </li>
                     </ul>
