@@ -19,24 +19,30 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
+        
+        <div class="col-lg-12">
             <div class="card " style="margin:20px;">
                 <div class="card-header">Equipment</div>
                 <div class="card-body">
                     <div class="card-body">
-                        <h4 class="card-text"> Nom D'equipment : {{ $equipment->name}}</h4>
-                        <h5 class="card-text"> Disponibilite : 
-                            @if($equipment->disponibilite == 1)
-                                Oui
-                              @else
-                                Non
-                              @endif
-                        </h5>
-                        <h5 class="card-text">Origine : {{ $equipment->quantite }}</h5>
-                        <h5 class="card-text">Dure de vie : {{ $equipment->dure_vie }}</h5>
-                        <h5> Description : {{$equipment->description}}</h5>
-                        
+                        <div class="row">
+                            <div class="col-8">
+                                <h4 class="card-text"> Nom D'equipment : {{ $equipment->name}}</h4>
+                                <h5 class="card-text"> Disponibilite : 
+                                    @if($equipment->disponibilite == 1)
+                                        Oui
+                                      @else
+                                        Non
+                                      @endif
+                                </h5>
+                                <h5 class="card-text">Origine : {{ $equipment->quantite }}</h5>
+                                <h5 class="card-text">Dure de vie : {{ $equipment->dure_vie }}</h5>
+                                <h5> Description : {{$equipment->description}}</h5>
+                            </div>
+                            <div class="col-4">
+                                <img height="250px" src="../assets/files/{{$equipment->image}}" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

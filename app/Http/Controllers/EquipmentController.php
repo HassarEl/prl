@@ -29,17 +29,23 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $equipment = new Equipment();
 
+        // dd($request);
+        
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $file->move(\public_path('assets/files/'),$fileName);
+
+
+        $equipment = new Equipment();
         $equipment->name = $request->name;
-        $equipment->description = $request->description;
         $equipment->disponibilite = $request->disponibilite;
         $equipment->quantite = $request->quantite;
-        $equipment->dure_vie = $request->dure_vie;
-
+        $equipment->description = $request->description;
+        $equipment->image = $fileName;
         $equipment->save();
-
         return redirect()->route('equipment.index')->with('message', 'Equipment Has Been Added Seccessfuly');
+    
     }
 
     /**

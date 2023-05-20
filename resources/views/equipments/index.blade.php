@@ -53,7 +53,7 @@
                     Quantite
                   </th>
                   <th>
-                    Dure de vie
+                    Images
                   </th>
                   <th>
                       Acction
@@ -78,7 +78,7 @@
                       {{$equipment->quantite}}
                   </td>
                   <td>
-                      {{$equipment->dure_vie}}
+                      <img height="110px" src="../assets/files/{{$equipment->image}}" alt="">
                   </td>
                   <td>
                     <div class="row">

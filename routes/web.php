@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\ReservationControlle;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,11 @@ Route::get('/salles/{id}', [RoomController::class, 'show'])->name('salles.show')
 Route::get('/salles/{id}/edit', [RoomController::class, 'edit'])->name('salle.edit');
 Route::post('/salles/{id}/edit', [RoomController::class, 'update'])->name('salle.update');
 Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.destroy');
+
+
+// Reservation Route
+
+Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store'); 
 
 
 require __DIR__.'/auth.php';

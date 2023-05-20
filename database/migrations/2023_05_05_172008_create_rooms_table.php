@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('descriptions');
             $table->integer('etage');
             $table->string('number');
+            $table->string('image');
             $table->timestamps();
         });
     }
