@@ -52,7 +52,8 @@ Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.d
 
 // Reservation Route
 
-Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store'); 
+Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store');
+Route::get('/reservation', [ReservationControlle::class, 'index'])->name('reservation.index');
 
 
 require __DIR__.'/auth.php';

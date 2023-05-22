@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title_reunion');
             $table->string('description')->nullable();
             $table->string('piece_jointe')->nullable();
+            $table->enum('status',['accepte','refuse'])->default('refuse');
             $table->foreignId('room_id')->constrained()->nullable()->default(1);
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

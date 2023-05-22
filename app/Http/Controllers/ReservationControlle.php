@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationControlle extends Controller
 {
@@ -12,7 +14,10 @@ class ReservationControlle extends Controller
      */
     public function index()
     {
-        //
+        $users = Auth::user()->all();
+        $rooms = Room::all();
+        $reservations = Reservation::all();
+        return view('reservations.index', compact('users', 'rooms'))->with('reservations', $reservations);
     }
 
     /**
