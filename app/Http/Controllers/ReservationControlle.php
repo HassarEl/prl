@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationControlle extends Controller
@@ -27,7 +28,28 @@ class ReservationControlle extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd(auth()->user()->email);
+
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $file->move(\public_path('assets/files/piecejoin/'), $fileName);
+
+        $reservation = new Reservation();
+        $reservation->user_id = auth()->user()->id;
+        $reservation->phone = $request->phone;
+        $reservation->title_reunion = $request->title_reunion;
+        $reservation->date_reservation = $request->date_reservation;
+        $reservation->heureDebut = $request->heureDebut;
+        $reservation->duree = $request->duree;
+        $reservation->description = $request->description;
+        $reservation->piece_jointe = $fileName;
+
+        $reservation->save();
+
+        return redirect()->route('home')->with('message', 'Reservation Has Been Added Success');
+
+
+
     }
 
     /**

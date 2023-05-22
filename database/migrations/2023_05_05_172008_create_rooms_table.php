@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('etage');
             $table->string('number');
             $table->string('image');
+            
             $table->timestamps();
         });
     }

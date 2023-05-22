@@ -14,7 +14,7 @@
 @endsection
 
 @section('title_header')
-    Equipments
+    Gestion des equipmentes
 @endsection
 
 @section('content')
@@ -27,12 +27,6 @@
     </div>
   @endif
 
-  <div class="row">
-    <div class="col-md-2 pl-3 pb-2">
-        <a class="btn btn-primary" href="{{route('equipment.create')}}" title="Add New Doctor">Ajouter un Equipment</a>
-    </div>
-</div>
-</div>
 
   <div class="card">
     <div class="card-header">
@@ -109,6 +103,7 @@
     </div>
 
   </div>
+</div>
 
 @endsection
 

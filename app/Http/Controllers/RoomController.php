@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\Equipment;
 use Illuminate\Http\Request;
+use App\Models\EquipmentRoom;
 
 class RoomController extends Controller
 {
@@ -24,11 +25,19 @@ class RoomController extends Controller
     {
         $rooms = new Room();
         $rooms->name = $request->name;
-        $rooms->quantite = $request->quantite;
-        $rooms->equipment_id = $request->equipment_id;
+        $rooms->capacite = $request->capacite;
+        // $rooms->equipment_id = $request->equipment_id;
         $rooms->descriptions = $request->descriptions;
         $rooms->etage = $request->etage;
         $rooms->number = $request->number;
+        $rooms->image = 'test.jpg';
+
+        // $equipment_rooms = new EquipmentRoom();
+        // $equipment_rooms->equipment_id = $request->equipment_id;
+        // $equipment_rooms->room_id = 1;
+        // $equipment_rooms->save();
+        // $rooms->equipment()->sync($request->equipment_id);
+
         $rooms->save();
         return redirect()->route('salles')->with('message', 'room Has Been Added Seccessfuly');
 

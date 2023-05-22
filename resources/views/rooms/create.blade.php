@@ -50,7 +50,7 @@
                   <div class="form-group row">
                     <label for="quantite" class="col-sm-3 col-form-label">Capacité</label>
                     <div class="col-sm-9">
-                      <input type="number" name="quantite" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
+                      <input type="number" name="capacite" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -65,7 +65,7 @@
                         <select style="color: #6C708C;" name="equipment_id" class="form-control" id="exampleSelectGender">
                             <option selected>--Select--</option>
                             @foreach($equipments as $equipment)
-                            <option value="{{$equipment->id}}">{{$equipment->name}}</option>
+                              <option value="{{$equipment->id}}">{{$equipment->name}}</option>
                             @endforeach
                           </select>
                     </div>

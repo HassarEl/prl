@@ -16,10 +16,11 @@ return new class extends Migration
             $table->date('date_reservation');
             $table->time('heureDebut');
             $table->decimal('duree', 5, 2)->default(0);
+            $table->string('phone', 15)->nullable();
             $table->string('title_reunion');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('piece_jointe')->nullable();
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('room_id')->constrained()->nullable()->default(1);
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

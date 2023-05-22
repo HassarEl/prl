@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-4">
                                 <h4 class="card-text"> Nom D'equipment : {{ $equipment->name}}</h4>
                                 <h5 class="card-text"> Disponibilite : 
                                     @if($equipment->disponibilite == 1)
@@ -39,7 +39,7 @@
                                 <h5 class="card-text">Dure de vie : {{ $equipment->dure_vie }}</h5>
                                 <h5> Description : {{$equipment->description}}</h5>
                             </div>
-                            <div class="col-4">
+                            <div class="col-8">
                                 <img height="250px" src="../assets/files/{{$equipment->image}}" alt="">
                             </div>
                         </div>

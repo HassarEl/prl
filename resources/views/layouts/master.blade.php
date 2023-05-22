@@ -19,13 +19,6 @@
 
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="#">@yield('title_page_1')</a></li>
-                                            <i class="bi bi-arrow-right-short"></i>
-                                            <li class="breadcrumb-item"><a href="#">@yield('title_page_2')</a></li>
-                                        </ol>
-                                    </nav>
                                     <br>
                                     <h1 class="m-0">@yield('title_header')</h1>
                                 </div>

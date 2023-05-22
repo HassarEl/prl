@@ -91,6 +91,15 @@
                                     </a>
                                 </form>
                             </li>
+							<li class="nav-item">
+								<form method="GET" action="{{route('register')}}">
+                                    @csrf
+                                    <a class="btn btn-outline-light ml-lg-3" id="in" href="{{ route('register') }}" onclick="event.preventDefault();
+                                        this.closest('form').submit(); " role="button">
+                                        {{ __('Register') }}
+                                    </a>
+                                </form>
+							</li>
 
                             @endauth
                         @endif

@@ -19,13 +19,13 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="name" class="sr-only">Name</label>
-                                    <input type="text" class="form-control" name="name" placeholder="Name" id="name">
+                                    <input type="text" class="form-control" value="{{auth()->user()->name}}" name="name" placeholder="Name" id="name">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="email" class="sr-only">Email</label>
-                                    <input type="text" class="form-control" name="email" placeholder="Email" id="email">
+                                    <input type="text" value="{{auth()->user()->email}}" class="form-control" name="email" placeholder="Email" id="email">
                                 </div>
                             </div>
                         </div>
@@ -50,8 +50,8 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-group">
-                                    <label for="name" class="sr-only">Date</label>
-                                    <input type="date" name class="form-control" placeholder="Name" id="name">
+                                    <label for="name" class="sr-only">Date Reservation</label>
+                                    <input type="date" class="form-control" name="date_reservation" placeholder="Date Reservation" id="name">
                                 </div>
                             </div>
                             <div class="col-4">

@@ -18,7 +18,7 @@ use App\Http\Controllers\ReservationControlle;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/dashboard', function () {

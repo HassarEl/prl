@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -25,10 +26,13 @@ class HomeController extends Controller
             {
                 return view('visiteurs.index');
             }
+            else if(Auth::user()->profil=='reponsable')
+            {
+                return view ('responsable.index');
+            }
         }
         else
         {
-            // return redirect()->route('login');
             return view('visiteurs.index');
         }
     }

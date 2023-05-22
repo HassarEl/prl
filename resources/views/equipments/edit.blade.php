@@ -51,12 +51,6 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="dure_vie" class="col-sm-3 col-form-label">Dure de vie</label>
-                <div class="col-sm-9">
-                  <input type="date"  name="dure_vie" class="form-control" value="{{$equipment->dure_vie}}" id="exampleInputEmail2" placeholder="Quantite" required>
-                </div>
-              </div>
-              <div class="form-group row">
                 <label for="description" class="col-sm-3 col-form-label">Description</label>
                 <div class="col-sm-9">
                   <input type="text"  name="description" class="form-control" value="{{$equipment->description}}" placeholder="Description" required>

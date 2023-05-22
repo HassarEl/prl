@@ -40,5 +40,12 @@ class DatabaseSeeder extends Seeder
             'profil' => 'user',
             'password' => bcrypt('12345678'),
         ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'Responsable',
+            'email' => 'responsable@gmail.com',
+            'profil' => 'reponsable',
+            'password' => bcrypt('12345678'),
+        ]);
     }
 }
