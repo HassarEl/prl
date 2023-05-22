@@ -37,7 +37,7 @@
                         <div class="item">
                             <div class="card">
                               <div class="card-header">
-                                <img style="height: 150px !important;" src="{{asset('assets/images/maroc_logo.png')}}" alt="">
+                                <img style="height: 150px !important;" src="../assets/files/{{$room->image}}" alt="">
                               </div>
                               <div class="card-body">
                                 <p class="text-xl mb-0">{{$room->name}}</p>

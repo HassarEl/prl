@@ -71,8 +71,8 @@
                               </select>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success">Success</button>
-                            <button type="button" class="btn btn-danger">Danger</button>
+                            <button type="button" class="btn btn-success">Accepte</button>
+                            <button type="button" class="btn btn-danger">Refusé</button>
                         </td>
                       </tr>
                       @endforeach

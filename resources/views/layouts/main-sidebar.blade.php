@@ -22,6 +22,13 @@
                 </li>
 
                 <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button" href="{{route('createSalle')}}">
+                        <i class="bi bi-grid-1x2"></i>
+                        <span class="pl-4 sidebar-menu-text">Ajouter Salles</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" href="{{route('reservation.index')}}">
                         <i class="bi bi-grid-1x2"></i>
                         <span class="pl-4 sidebar-menu-text"> Reservations</span>
@@ -70,6 +77,13 @@
                     <a class="sidebar-menu-button"  href="{{route('equipment.index')}}">
                         <i class="bi bi-grid-fill"></i>
                         <span class="pl-4 sidebar-menu-text">Equipments</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button"  href="{{route('equipment.create')}}">
+                        <i class="bi bi-grid-fill"></i>
+                        <span class="pl-4 sidebar-menu-text">Ajouter Equipments</span>
                     </a>
                 </li>
                 @endcan

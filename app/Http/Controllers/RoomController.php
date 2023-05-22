@@ -23,6 +23,11 @@ class RoomController extends Controller
     
     public function store(Request $request)
     {
+
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $file->move(\public_path('assets/files/'), $fileName);
+
         $rooms = new Room();
         $rooms->name = $request->name;
         $rooms->capacite = $request->capacite;
@@ -30,7 +35,7 @@ class RoomController extends Controller
         $rooms->descriptions = $request->descriptions;
         $rooms->etage = $request->etage;
         $rooms->number = $request->number;
-        $rooms->image = 'test.jpg';
+        $rooms->image = $fileName;
 
         // $equipment_rooms = new EquipmentRoom();
         // $equipment_rooms->equipment_id = $request->equipment_id;
