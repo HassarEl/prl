@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use App\Models\Equipment;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\EquipmentRoom;
 
@@ -14,19 +15,21 @@ class ContenuController extends Controller
      */
     public function index()
     {
+        $reservations = Reservation::all();
         $content = EquipmentRoom::all();
         $salles = Room::all();
         $equipments = Equipment::all();
-        return view('salleequipment.index', compact('equipments', 'salles'));
+        return view('salleequipment.index', compact('reservations', 'equipments', 'salles'));
     }
 
     public function centent(Request $request)
     {
+        $reservations = Reservation::all();
         $equipments = Equipment::all();
         $salle = Room::find($request->room);
         // $equipment_salle = Room::find($request->salle)->equipments()->get();
         $contents = EquipmentRoom::all()->where('room_id', $request->room);
-         return view('salleequipment.content', compact('equipments','salle', 'contents'));
+         return view('salleequipment.content', compact('reservations', 'equipments','salle', 'contents'));
     }
 
     /**
@@ -34,9 +37,10 @@ class ContenuController extends Controller
      */
     public function create()
     {
+        $reservations = Reservation::all();
         $salles = Room::all();
         $equipments = Equipment::all();
-        return view('salleequipment.create', compact('equipments', 'salles'));
+        return view('salleequipment.create', compact('reservations', 'equipments', 'salles'));
     }
 
     /**

@@ -55,6 +55,7 @@
                     <a class="sidebar-menu-button" href="{{route('reservation.index')}}">
                         <i class="bi bi-grid-1x2"></i>
                         <span class="pl-4 sidebar-menu-text">Reservations</span>
+                        <span class="ml-auto badge text-bg-secondary">{{$reservations->count()}}</span>
                     </a>
                 </li>
 

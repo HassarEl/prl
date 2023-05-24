@@ -66,13 +66,19 @@
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Salles</option>
                                 @foreach($rooms as $room)
-                                    <option value="1">{{$room->name}}</option>
+                                    <option value="{{$room->id}}">{{$room->name}}</option>
                                 @endforeach
                               </select>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success">Accepte</button>
-                            <button type="button" class="btn btn-danger">Refusé</button>
+                            <form action="" method="get" target="_blank">
+                                @csrf
+                                <button class="btn btn-success" type="submit">Accepte</button>
+                             </form>
+                             <form action="" method="get" target="_blank">
+                                @csrf
+                                <button class="btn btn-danger" type="submit">Refusé</button>
+                             </form>
                         </td>
                       </tr>
                       @endforeach

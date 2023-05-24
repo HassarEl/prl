@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use App\Models\Equipment;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\EquipmentRoom;
 
@@ -13,12 +14,14 @@ class RoomController extends Controller
     {
         $rooms = Room::all();
         $equipments = Equipment::all();
-        return view('rooms.index', compact('equipments', 'rooms'));
+        $reservations = Reservation::all();
+        return view('rooms.index', compact('equipments', 'rooms', 'reservations'));
     }
     public function create()
     {
+        $reservations = Reservation::all();
         $equipments = Equipment::all();
-        return view('rooms.create', compact('equipments'));
+        return view('rooms.create', compact('equipments', 'reservations'));
     }
     
     public function store(Request $request)

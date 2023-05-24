@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipment;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class EquipmentController extends Controller
@@ -12,8 +13,9 @@ class EquipmentController extends Controller
      */
     public function index()
     {
+        $reservations = Reservation::all();
         $equipments = Equipment::all();
-        return view('equipments.index', compact('equipments'));
+        return view('equipments.index', compact('reservations', 'equipments'));
     }
 
     /**
@@ -21,7 +23,8 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        return view('equipments.create');
+        $reservations = Reservation::all();
+        return view('equipments.create', compact('reservations'));
     }
 
     /**

@@ -14,10 +14,11 @@ class ReservationControlle extends Controller
      */
     public function index()
     {
+        $reservations = Reservation::all();
         $users = Auth::user()->all();
         $rooms = Room::all();
         $reservations = Reservation::all();
-        return view('reservations.index', compact('users', 'rooms'))->with('reservations', $reservations);
+        return view('reservations.index', compact('reservations', 'users', 'rooms'))->with('reservations', $reservations);
     }
 
     /**
@@ -52,8 +53,6 @@ class ReservationControlle extends Controller
         $reservation->save();
 
         return redirect()->route('home')->with('message', 'Reservation Has Been Added Success');
-
-
 
     }
 
