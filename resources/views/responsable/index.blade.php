@@ -13,7 +13,7 @@
 @endsection
 
 @section('title_header')
-    Test
+    Responsable
 @endsection
 
 @section('content')

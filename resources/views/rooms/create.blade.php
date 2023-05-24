@@ -21,8 +21,8 @@
 
     <!-- partial -->
     <div class="container page-body-wrapper">
-        <div class="col-md-10 grid-margin stretch-card pt-5">
-            <div class="card pt-5">
+        <div class="col-md-10 grid-margin stretch-card pt-1">
+            <div class="card pt-1">
               <div class="card-body">
                 @if (session()->has('message'))
                   <div class="alert alert-success alert-dismissible fade show" role="alert">

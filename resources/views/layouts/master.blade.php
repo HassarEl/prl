@@ -15,7 +15,7 @@
 
 
                     <div class="container-fluid  page__heading-container">
-                        <div class="page__heading">
+                        <div class="page__heading pt-1 pb-3">
 
                             <div class="d-flex align-items-center">
                                 <div>

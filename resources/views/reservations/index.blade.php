@@ -20,7 +20,7 @@
     <div class="col">
         <div class="card">
             <div class="card-header">
-              <h2 class="card-title">Equipment</h2>
+              <h2 class="card-title">Reservation</h2>
             </div>
         
             <div class="card-body p-0">
@@ -32,11 +32,11 @@
                         <th>Date Reservation</th>
                         <th>Heure Début</th>
                         <th>Durée</th>
-                        <th>Phone</th>
                         <th>Titre</th>
-                        <th>Description</th>
+                        <th>Acction</th>
+                        {{-- <th>Description</th>
                         <th>Room</th>
-                        <th>Action</th>
+                        <th>Action</th> --}}
                       </tr>
                     </thead>
                     <tbody>
@@ -59,26 +59,12 @@
                         <td>{{$data->date_reservation}}</td>
                         <td>{{$data->heureDebut}}</td>
                         <td>{{$data->duree}}</td>
-                        <td>{{$data->phone}}</td>
                         <td>{{$data->title_reunion}}</td>
-                        <td>{{$data->description}}</td>
                         <td>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Salles</option>
-                                @foreach($rooms as $room)
-                                    <option value="{{$room->id}}">{{$room->name}}</option>
-                                @endforeach
-                              </select>
-                        </td>
-                        <td>
-                            <form action="" method="get" target="_blank">
+                            <form action="{{url('/reservation/' . $data->id)}}" method="get">
                                 @csrf
-                                <button class="btn btn-success" type="submit">Accepte</button>
-                             </form>
-                             <form action="" method="get" target="_blank">
-                                @csrf
-                                <button class="btn btn-danger" type="submit">Refusé</button>
-                             </form>
+                                <button class="btn btn-outline-primary" type="submit"> Voire</button>
+                            </form>
                         </td>
                       </tr>
                       @endforeach

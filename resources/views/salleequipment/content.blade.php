@@ -25,51 +25,65 @@
         
     </div>
     <br>
-    <div class="row">
-        <div class="card">
-            <div class="card-header">
-                <label class="form-label">Composition</label>
-            </div>
-            <div class="card-body d-flex justify-content-center">
-                <div class="col-8">
+    <div class="card">
+        <div class="card-header">
+            <label class="form-label">Composition</label>
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card">
                     <table class="table table-bordere">
-                      <thead>
-                        <tr>
-                          <th>Equipment</th>
-                          <th>Quantite</th>
-                          <th>Acction</th>
-                        </tr>
-                    </thead>
-                      <tbody>
-                        @foreach($contents as $content)
-                        <tr>
-                            <td>
-                                @foreach($equipments as $equipment)
-                                    @if($name_equipment = $equipment->id == $content->equipment_id)
-                                        {{$equipment->name}}
-                                    @endif
-                                @endforeach
-                            </td>
+                        <thead>
+                              <tr>
+                                <th>Equipment</th>
+                                <th>Quantite</th>
+                                <th>Acction</th>
+                              </tr>
+                          </thead>
+                        <tbody>
+                            @foreach($contents as $content)
+                            <tr>
+                                <td>
+                                    @foreach($equipments as $equipment)
+                                        @if($name_equipment = $equipment->id == $content->equipment_id)
+                                            {{$equipment->name}}
+                                        @endif
+                                    @endforeach
+                                </td>
+    
+                                <td>
+    
+                                  {{$content->quantite}}
+                                
+                                </td>
+    
+                                <td>
+    
+                                  <form method="POST" action="{{url('/contenu/'. $content->id)}}" accept-charset="UTF-8" >
+                                      {{ method_field('DELETE') }}
+                                      {{ csrf_field() }}
+                                      <button type="submit" class="btn btn-danger btn-sm" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                  </form>
+    
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    Equipment Totale : {{$contents->count()}}
+                                </td>
+                                <td>
+    
+                                </td>
+                                <td>
+    
+                                </td>
+                            </tr>
                             
-                            <td>
-                                
-                                {{$content->quantite}}
-            
-                            </td>
-                            
-                            <td>
-                                
-                                <form method="POST" action="{{url('/contenu/'. $content->id)}}" accept-charset="UTF-8" >
-                                    {{ method_field('DELETE') }}
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Doctor" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                </form>
-                                
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </div>

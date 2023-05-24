@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-    
+
 @endsection
 
 @section('scripts')

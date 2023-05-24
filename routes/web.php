@@ -55,6 +55,7 @@ Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.d
 
 Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store');
 Route::get('/reservation', [ReservationControlle::class, 'index'])->name('reservation.index');
+Route::get('/reservation/{id}', [ReservationControlle::class, 'show'])->name('reservation.show');
 
 // Salle Equipment Route
 

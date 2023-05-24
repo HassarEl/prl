@@ -51,8 +51,9 @@ class RoomController extends Controller
 
     }public function show(string $id)
     {
+        $reservations = Reservation::all();
         $room = Room::find($id);
-        return view('rooms.show', compact('room'));
+        return view('rooms.show', compact('room', 'reservations'));
     }
 
     public function edit(string $id)

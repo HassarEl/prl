@@ -14,7 +14,6 @@ class ReservationControlle extends Controller
      */
     public function index()
     {
-        $reservations = Reservation::all();
         $users = Auth::user()->all();
         $rooms = Room::all();
         $reservations = Reservation::all();
@@ -61,7 +60,10 @@ class ReservationControlle extends Controller
      */
     public function show(string $id)
     {
-        //
+        $users = Auth::user()->all();
+        $rooms = Room::all();
+        $reservations = Reservation::find($id);
+        return view('reservations.show' ,compact('reservations', 'users', 'rooms'));
     }
 
     /**
