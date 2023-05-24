@@ -48,12 +48,12 @@
                   <input type="radio" name="disponibilite" id="non" value="0">
                 </div>
               </div>
-              <div class="form-group row">
+              {{-- <div class="form-group row">
                 <label for="quantite" class="col-sm-3 col-form-label">Quantite</label>
                 <div class="col-sm-9">
                   <input type="number" min="0" name="quantite" class="form-control" id="exampleInputEmail2" placeholder="Quantite" required>
                 </div>
-              </div>
+              </div> --}}
               
               <div class="form-group row">
                 <label for="description" class="col-sm-3 col-form-label">Description</label>

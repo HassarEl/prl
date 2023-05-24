@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('equipment_rooms', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('equipment_id')->constrained();
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('equipment_id')->constrained()->onDelete('cascade');
+            $table->foreignId('room_id')->constrained()->onDelete('cascade');
+            $table->string('quantite', 200);
             $table->timestamps();
         });
     }

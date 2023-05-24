@@ -44,9 +44,6 @@
                     Disponibilite
                   </th>
                   <th>
-                    Quantite
-                  </th>
-                  <th>
                     Images
                   </th>
                   <th>
@@ -67,9 +64,6 @@
                     @else
                       Non
                     @endif
-                  </td>
-                  <td>
-                      {{$equipment->quantite}}
                   </td>
                   <td>
                       <img height="110px" src="../assets/files/{{$equipment->image}}" alt="">

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\ContenuController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\ReservationControlle;
@@ -55,5 +56,12 @@ Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.d
 Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store');
 Route::get('/reservation', [ReservationControlle::class, 'index'])->name('reservation.index');
 
+// Salle Equipment Route
+
+Route::get('/contenu', [ContenuController::class, 'index'])->name('contenu.index');
+Route::post('/contenu', [ContenuController::class, 'centent'])->name('contenu.content');
+Route::get('/contenu/create', [ContenuController::class, 'create'])->name('contenu.create');
+Route::post('/contenu/create', [ContenuController::class, 'store'])->name('contenu.store');
+Route::delete('/contenu/{id}', [ContenuController::class,'destroy'])->name('contenu.delete');
 
 require __DIR__.'/auth.php';

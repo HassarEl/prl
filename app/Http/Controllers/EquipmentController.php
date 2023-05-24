@@ -40,7 +40,7 @@ class EquipmentController extends Controller
         $equipment = new Equipment();
         $equipment->name = $request->name;
         $equipment->disponibilite = $request->disponibilite;
-        $equipment->quantite = $request->quantite;
+        // $equipment->quantite = $request->quantite;
         $equipment->description = $request->description;
         $equipment->image = $fileName;
         $equipment->save();
@@ -81,7 +81,7 @@ class EquipmentController extends Controller
         $equipment = Equipment::find($id);
         $equipment->name = $request->name;
         $equipment->disponibilite = $request->disponibilite;
-        $equipment->quantite = $request->quantite;
+        // $equipment->quantite = $request->quantite;
         $equipment->description = $request->description;
         $equipment->image = $fileName;
         $equipment->save();

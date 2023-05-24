@@ -59,7 +59,7 @@
                       <input type="number" name="etage" class="form-control" id="exampleInputEmail2" placeholder="Etage">
                     </div>
                   </div>
-                  <div class="form-group row">
+                  {{-- <div class="form-group row">
                     <label for="equipment_id" class="col-sm-3 col-form-label">Equipment</label>
                     <div class="col-sm-9">
                         <select style="color: #6C708C;" name="equipment_id" class="form-control" id="exampleSelectGender">
@@ -69,7 +69,7 @@
                             @endforeach
                           </select>
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="form-group row">
                     <label for="descriptions" class="col-sm-3 col-form-label">Description</label>
                     <div class="col-sm-9">

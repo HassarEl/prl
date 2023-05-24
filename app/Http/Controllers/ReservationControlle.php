@@ -88,4 +88,9 @@ class ReservationControlle extends Controller
     {
         //
     }
+
+    public function status() 
+    {
+        return view('reservations.index');
+    }
 }

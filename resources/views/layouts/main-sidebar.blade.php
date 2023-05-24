@@ -16,22 +16,45 @@
                 {{-- Rooms --}}
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" href="{{url('/salles')}}">
-                        <i class="bi bi-grid-1x2"></i>
+                        <i class="bi bi-caret-right-fill"></i>
                         <span class="pl-4 sidebar-menu-text"> Salles</span>
                     </a>
                 </li>
 
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" href="{{route('createSalle')}}">
-                        <i class="bi bi-grid-1x2"></i>
+                        <i class="bi bi-plus-circle"></i>
                         <span class="pl-4 sidebar-menu-text">Ajouter Salles</span>
                     </a>
+                </li>
+
+
+                <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button" data-toggle="collapse"  href="#reservation_menu">
+                        <i class="bi bi-node-plus"></i>
+                        <span class="pl-4 sidebar-menu-text">Equipment au salles</span>
+                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="sidebar-submenu collapse" id="reservation_menu">
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="{{route('contenu.index')}}">
+                                <i class="bi bi-plus-circle"></i> 
+                                <span class="sidebar-menu-text">Voire Contenu</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{route('contenu.create')}}">
+                                <i class="bi bi-eye"></i>
+                                <span class="sidebar-menu-text">Ajoute Contenu</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" href="{{route('reservation.index')}}">
                         <i class="bi bi-grid-1x2"></i>
-                        <span class="pl-4 sidebar-menu-text"> Reservations</span>
+                        <span class="pl-4 sidebar-menu-text">Reservations</span>
                     </a>
                 </li>
 

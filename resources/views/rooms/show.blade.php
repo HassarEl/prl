@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <h5 class="card-text"> Numero : {{$room->number}}</h5>
                         <h5 class="card-text">Capacité : {{ $room->quantite }}</h5>
-                        <h5 class="card-text">Equipments : {{ $room->equipment->name }}</h5>
+                        {{-- <h5 class="card-text">Equipments : {{ $room->equipment->name }}</h5> --}}
                         <h5 class="card-text"> Etage : {{$room->etage}}</h5>
                         <h5 class="card-text"> Description : {{$room->descriptions}}</h5>
                     </div>

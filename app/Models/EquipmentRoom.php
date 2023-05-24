@@ -12,4 +12,9 @@ class EquipmentRoom extends Model
     protected $table = 'equipment_rooms';
     protected $primaryKey = 'id';
     
+    protected $fillable = [
+        'equipment_is',
+        'room_id',
+        'quantite',
+    ];
 }

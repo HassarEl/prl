@@ -13,9 +13,9 @@ class Room extends Model
 
     protected $primaryKey = 'id';
 
-    public function equipment(): BelongsToMany
+    public function equipments(): BelongsToMany
     {
-        return $this->belongsToMany(Equipment::class, 'equipment_rooms', 'room_id', 'equipment_id');
+        return $this->belongsToMany(Equipment::class, 'equipment_rooms', 'equipment_id');
     }
 
     public function user(): BelongsToMany
