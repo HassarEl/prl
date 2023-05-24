@@ -30,11 +30,17 @@
             <div class="card " style="margin:20px;">
                 <div class="card-header">{{ $room->name}}</div>
                     <div class="card-body">
-                        <h5 class="card-text"> Numero : {{$room->number}}</h5>
-                        <h5 class="card-text">Capacité : {{ $room->quantite }}</h5>
-                        {{-- <h5 class="card-text">Equipments : {{ $room->equipment->name }}</h5> --}}
-                        <h5 class="card-text"> Etage : {{$room->etage}}</h5>
-                        <h5 class="card-text"> Description : {{$room->descriptions}}</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5 class="card-text"> Numero : {{$room->number}}</h5>
+                                <h5 class="card-text">Capacité : {{ $room->quantite }}</h5>
+                                <h5 class="card-text"> Etage : {{$room->etage}}</h5>
+                                <h5 class="card-text"> Description : {{$room->descriptions}}</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <img class="card-img-top" height="250px" src="../assets/files/{{$room->image}}" alt="image">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                        <div class="row">

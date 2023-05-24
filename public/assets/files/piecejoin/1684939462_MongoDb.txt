@@ -1,0 +1,57 @@
+// liste des dbs 
+	show dbs 
+
+// Créer ou selectionner une db
+	use db1
+
+// Pour supprimer une base de donnée
+	db.dropDatabase()
+
+// Créer une collection(Table)
+	db.createCollection("Personnes")
+
+// Afficher les collections
+	show collections
+
+// Pour supprimer la collection Personnes
+	db.Personnes.drop()
+
+// Afficher les personnes 
+	db.Personnes.find()
+
+// Afficher les personnes dont le nom est omar
+	db.Personnes.findOne({"name":"omar"})
+
+// Supprimer la personne dont le nom est omar
+	db.Personnes.deleteOne({"name":"omar"})
+
+// Supprimer les personnes dont le nom est omar
+	db.Personnes.deleteMany({"name":"omar"})
+
+// Modifier la ville de la personne dont le nom est omar par la ville Sale
+	db.Personnes.updateOne({"name":"omar"},{'$set':{"ville":"Sale"})
+
+// Afficher le nombre des personnes
+	db.Personnes.countDocuments()
+
+// Afficher le nombre des personnes dont le nom est omar
+	db.Personnes.countDocuments({"name":"omar"})
+
+// Afficher les noms de toutes les personnes 
+	db.Personnes.find({},{"name":1,"_id":0})
+
+//
+ db.Personnes.aggregate([{$match:{ville:{$in:['Tamsna','Rabat']}}},{$sort:{name:1}},{$limit:2},{$project:{name:1,_id:0}}])
+
+//
+	db.Personnes.aggregate([{$group:{_id:'$ville',nb:{$sum:1}}},{$match:{nb:{$gte:2}}}])
+
+//
+ db.Personnes.aggregate([{$group:{_id:'$ville',nb:{$sum:1}}}])
+
+// Create User 
+	db.createUser({user:"User Admin",pwd:"password","roles":[{"role":"userAdmin","db":"db1"}]})
+
+// connection User
+	db.auth("u1","u1")
+

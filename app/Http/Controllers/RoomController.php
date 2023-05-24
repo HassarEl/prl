@@ -62,14 +62,20 @@ class RoomController extends Controller
 
     public function update(Request $request, string $id)
     {
+
+        $file = $request->file('file');
+        $fileName = time().'_'.$file->getClientOriginalName();
+        $file->move(\public_path('assets/files/'), $fileName);
+
         $room = Room::find($id);
 
         $room->name = $request->name;
-        $room->quantite = $request->quantite;
-        $room->equipment_id = $request->equipment_id;
+        $room->capacite = $request->capacite;
+        // $room->equipment_id = $request->equipment_id;
         $room->descriptions = $request->descriptions;
         $room->etage = $request->etage;
         $room->number = $request->number;
+        $room->image = $fileName;
         $room->save();
 
         return redirect()->route('salles')->with('message', 'Salle Has Been Updated Seccessfuly');

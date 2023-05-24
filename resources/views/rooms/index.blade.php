@@ -35,16 +35,19 @@
                      @foreach ($rooms as $room)   
                     <div class="col-lg-4">
                         <div class="item">
-                            <div class="card">
+                            <div class="card" style="width: 18rem;">
                               <div class="card-header">
-                                <img style="height: 150px !important;" src="../assets/files/{{$room->image}}" alt="">
+                                <img class="card-img-top" style="height: 150px !important;" src="../assets/files/{{$room->image}}" alt="">
                               </div>
                               <div class="card-body">
                                 <p class="text-xl mb-0">{{$room->name}}</p>
                                 <span class="text-sm text-grey">{{$room->quantite}}</span>
                                 <br>
                                 <br>
-                                <a class="btn btn-primary" href="{{url('salles/'. $room->id)}}">View Content</a>
+                                <form action="{{url('salles/'. $room->id)}}">
+                                  @csrf
+                                  <button class="btn btn-primary" type="submit">Voir Salle</button>
+                               </form>
                               </div>
                             </div>
                         </div>

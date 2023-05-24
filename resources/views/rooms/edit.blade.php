@@ -50,7 +50,7 @@
                   <div class="form-group row">
                     <label for="quantite" class="col-sm-3 col-form-label">Capacité</label>
                     <div class="col-sm-9">
-                      <input type="number" name="quantite" value="{{$room->quantite}}" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
+                      <input type="number" name="capacite" value="{{$room->capacite}}" class="form-control" id="exampleInputEmail2" placeholder="Capacite de salle">
                     </div>
                   </div>
                   <div class="form-group row">
