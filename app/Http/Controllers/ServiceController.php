@@ -26,7 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $users = DB::table('users')->where('profil', 'chefService')->orwhere('profil', 'user')->orwhere('profil', 'reponsable')->get();
+        $users = DB::table('users')->where('profil', 'chefService')->get();
         $reservations = Reservation::all();
         return view('services.create', compact('reservations', 'users'));
     }
@@ -60,24 +60,38 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $users = DB::table('users')->where('profil', 'chefService')->get();
+        $reservations = Reservation::all();
+        $service = Service::find($id);
+        return view('services.edit', compact('reservations', 'users', 'service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id)
     {
-        //
+        $services = Service::find($id);
+
+        $services->name = $request->name;
+        $services->user_id = $request->user_id;
+        $services->description = $request->description;
+
+        $services->save();
+
+        return redirect()->route('services.index')->with('message', 'service has been Updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+        $service = Service::destroy($id);
+
+        return redirect()->route('services.index')->with('message', 'service has been Deleted successfully');
+        
     }
 }

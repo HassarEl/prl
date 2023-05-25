@@ -32,7 +32,7 @@
                     <div class="row">
 
                         <!-- card 1-->
-                     @foreach ($rooms as $room)   
+                    @foreach ($rooms as $room)   
                     <div class="col-lg-4">
                         <div class="item">
                             <div class="card" style="width: 18rem;">

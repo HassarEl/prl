@@ -71,6 +71,10 @@ Route::delete('/contenu/{id}', [ContenuController::class,'destroy'])->name('cont
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
 Route::post('/services/create', [ServiceController::class, 'store'])->name('services.store');
+Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+Route::post('/services/{id}/edit', [ServiceController::class, 'update'])->name('services.update');
+Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
+
 
 
 
