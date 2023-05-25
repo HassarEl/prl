@@ -28,6 +28,28 @@
                     </a>
                 </li>
 
+                <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button" data-toggle="collapse"  href="#service">
+                        <i class="bi bi-person-fill-gear"></i>
+                        <span class="pl-4 sidebar-menu-text">Service</span>
+                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="sidebar-submenu collapse" id="service">
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="{{route('services.index')}}">
+                                <i class="bi bi-plus-circle"></i> 
+                                <span class="sidebar-menu-text">Voire Services</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{route('services.create')}}">
+                                <i class="bi bi-eye"></i>
+                                <span class="sidebar-menu-text">Ajoute Service</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" data-toggle="collapse"  href="#reservation_menu">
@@ -99,7 +121,7 @@
                 
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button"  href="{{route('equipment.index')}}">
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="bi bi-list-nested"></i>
                         <span class="pl-4 sidebar-menu-text">Equipments</span>
                     </a>
                 </li>

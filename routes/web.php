@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ContenuController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\ReservationControlle;
 
@@ -64,5 +65,19 @@ Route::post('/contenu', [ContenuController::class, 'centent'])->name('contenu.co
 Route::get('/contenu/create', [ContenuController::class, 'create'])->name('contenu.create');
 Route::post('/contenu/create', [ContenuController::class, 'store'])->name('contenu.store');
 Route::delete('/contenu/{id}', [ContenuController::class,'destroy'])->name('contenu.delete');
+
+// services Route
+
+Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/services/create', [ServiceController::class, 'store'])->name('services.store');
+
+
+
+Route::get('/calender', function(){
+    return view('layouts.calender');
+});
+
+
 
 require __DIR__.'/auth.php';
