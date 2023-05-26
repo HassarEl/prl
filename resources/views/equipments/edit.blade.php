@@ -45,12 +45,6 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="quantite" class="col-sm-3 col-form-label">Quantite</label>
-                <div class="col-sm-9">
-                  <input type="number" min="0" name="quantite" class="form-control" value="{{$equipment->quantite}}" placeholder="Quantite" required>
-                </div>
-              </div>
-              <div class="form-group row">
                 <label for="description" class="col-sm-3 col-form-label">Description</label>
                 <div class="col-sm-9">
                   <input type="text"  name="description" class="form-control" value="{{$equipment->description}}" placeholder="Description" required>

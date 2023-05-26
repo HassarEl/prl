@@ -35,10 +35,17 @@ class ReservationControlle extends Controller
     {
         // dd(auth()->user()->email);
 
-        $file = $request->file('file');
-        $fileName = time().'_'.$file->getClientOriginalName();
-        $file->move(\public_path('assets/files/piecejoin/'), $fileName);
+        if($request->file('file') != null){
+            $file = $request->file('file');
+            $fileName = time().'_'.$file->getClientOriginalName();
+            $file->move(\public_path('assets/files/piecejoin/'), $fileName);
 
+            $reservation->piece_jointe = $fileName;
+
+        } else {
+            $reservation->piece_jointe = null;
+        }
+    
         $reservation = new Reservation();
         $reservation->user_id = auth()->user()->id;
         $reservation->phone = $request->phone;
@@ -47,7 +54,7 @@ class ReservationControlle extends Controller
         $reservation->heureDebut = $request->heureDebut;
         $reservation->duree = $request->duree;
         $reservation->description = $request->description;
-        $reservation->piece_jointe = $fileName;
+        
 
         $reservation->save();
 
@@ -79,7 +86,15 @@ class ReservationControlle extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request);
+
+        $reservation = Reservation::find($id);
+
+        $reservation->room_id = $request->salle;
+        $reservation->status = $request->status;
+
+        $reservation->save();
+        return redirect()->route('reservation.index')->with('message', 'Reservation updated successfully');
     }
 
     /**

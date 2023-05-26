@@ -1,7 +1,12 @@
 @extends('layouts.master')
 
 @section('css')
-
+<style>
+    .badge{
+        padding: 3px 8px 5px 8px !important;
+        font-size: 1em !important;
+    }
+</style>
 @endsection
 
 {{-- @section('title_page_1')
@@ -58,8 +63,25 @@
                         </td>
                         <td>{{$data->date_reservation}}</td>
                         <td>{{$data->heureDebut}}</td>
-                        <td>{{$data->duree}}</td>
-                        <td>{{$data->title_reunion}}</td>
+                        <td>
+                            @foreach($rooms as $room)
+                                @if($data->room_id == null)
+                                    {{ "Not Define" }}
+                                    @break($data->room_id == null)
+                                @elseif($data->room_id == $room->id)
+                                    {{ $room->name }}
+                                @endif
+                            @endforeach
+                        </td>
+                        <td>
+                            @if($data->status == 'refuse')
+                                <h5 class="card-text"><span class="badge text-bg-danger">{{$data->status}}</span></h5>
+                            @elseif ($data->status == 'accepte')
+                                <h5 class="card-text"><span class="badge text-bg-success">{{$data->status}}</span></h5>
+                            @else
+                                <h5 class="card-text"><span class="badge text-bg-warning">{{$data->status}}</span></h5>
+                            @endif
+                        </td>
                         <td>
                             <form action="{{url('/reservation/' . $data->id)}}" method="get">
                                 @csrf

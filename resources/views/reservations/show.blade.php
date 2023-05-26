@@ -56,13 +56,15 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <form class="form" action="" method="post">
+                    <form class="form" action="{{ url('/reservation/'. $reservations->id .'/reservate') }}" method="post">
+                        @csrf
                         <div class="row">
 
                         
                             <div class="col-md-4">
                                 <select class="form-select" name="salle" required>
                                     <option selected>Selection La Salle</option>
+                                    <option value="">Null Value</option>
                                     @foreach($rooms as $room)
                                         <option value="{{$room->id}}">{{$room->name}}</option>
                                     @endforeach

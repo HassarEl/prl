@@ -56,8 +56,9 @@ class EquipmentController extends Controller
      */
     public function show(string $id)
     {
+        $reservations = Reservation::all();
         $equipment = Equipment::find($id);
-        return view('equipments.show', compact('equipment'));
+        return view('equipments.show', compact('equipment', 'reservations'));
     }
 
     /**
@@ -65,9 +66,10 @@ class EquipmentController extends Controller
      */
     public function edit(string $id)
     {
+        $reservations = Reservation::all();
         $equipment = Equipment::find($id);
 
-        return view('equipments.edit', compact('equipment'));
+        return view('equipments.edit', compact('equipment', 'reservations'));
     }
 
     /**
@@ -75,18 +77,23 @@ class EquipmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $equipment = Equipment::find($id);
+
+        if($request->file('file') != null)
+        {
+            $file = $request->file('file');
+            $fileName = time().'_'.$file->getClientOriginalName();
+            $file->move(\public_path('assets/files/'),$fileName);
+
+            $equipment->image = $fileName;
+        } 
         
 
-        $file = $request->file('file');
-        $fileName = time().'_'.$file->getClientOriginalName();
-        $file->move(\public_path('assets/files/'),$fileName);
-
-        $equipment = Equipment::find($id);
+        
         $equipment->name = $request->name;
         $equipment->disponibilite = $request->disponibilite;
-        // $equipment->quantite = $request->quantite;
         $equipment->description = $request->description;
-        $equipment->image = $fileName;
+        
         $equipment->save();
 
         return redirect()->route('equipment.index')->with('message', 'Equipment Has Been Updated Seccessfuly');
