@@ -7,7 +7,7 @@
 <html>
 	<head>
 	<meta charset="utf-8">
-	<title>Justice &mdash; Free Website Template, Free HTML5 Template by gettemplates.co</title>
+	<title>chambredesconseillers</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 
@@ -288,8 +288,7 @@
 			<div class="row copyright">
 				<div class="col-md-12">
 					<p class="pull-left">
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						<small class="block">&copy; 2023  Ministre Gov.</small>
 					</p>
 					<p class="pull-right">
 						<ul class="gtco-social-icons pull-right">

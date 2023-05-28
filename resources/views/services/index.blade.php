@@ -53,9 +53,9 @@
                                 <br>
                                 <p class="text-sm text-grey text-body-secondary">{{ $service->description }}</p>
                                 <br>
-                                <form action="{{url('salles/'. $service->id)}}">
+                                <form action="{{url('services/'. $service->id)}}">
                                   @csrf
-                                  <button class="btn btn-primary" type="submit">Voir Salle</button>
+                                  <button class="btn btn-primary" type="submit">Voire</button>
                                </form>
                               </div>
                             </div>

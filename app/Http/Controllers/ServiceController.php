@@ -7,6 +7,7 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -52,9 +53,13 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $service)
+    public function show(string $id)
     {
-        //
+        $service = Service::find($id);
+        $users = Auth::user()->get();
+        $reservations = Reservation::all();
+
+        return view('services.show', compact('service', 'users', 'reservations'));
     }
 
     /**

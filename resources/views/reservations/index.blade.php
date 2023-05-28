@@ -34,12 +34,13 @@
 </div>
     <div class="col">
         <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Reservation</h2>
+            <div class="card-header d-flex justify-content-between">
+              <h2 class="card-title">Reservation</h2> 
+              {{-- <input type="text" class="form-item" id="search" onfocus="search"> --}}
             </div>
         
-            <div class="card-body p-0">
-                <table class="table table-striped table-hover">
+            <div class="card-body p-0" id="search_list">
+                <table class="table table-striped table-hover" id="example1">
                     <thead>
                       <tr>
                         <th>Name</th>
@@ -49,9 +50,6 @@
                         <th>Durée</th>
                         <th>Titre</th>
                         <th>Acction</th>
-                        {{-- <th>Description</th>
-                        <th>Room</th>
-                        <th>Action</th> --}}
                       </tr>
                     </thead>
                     <tbody>
@@ -108,5 +106,42 @@
 @endsection
 
 @section('scripts')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- <script>
+        $(document).ready(function(){
+            $('#search').on('keyup', function(){
+                var query = $(this).val();
+                $.ajax({
+                    url:"search",
+                    type:"GET",
+                    data:{'search' : query},
+                    success: function(data){
+                        $('#search_list').html(data);
+                    }
+                })
+            })
+        });
+    </script>
+
+    <script>
+        $(function () {
+          $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+          $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
+        });
+    </script> --}}
 
 @endsection

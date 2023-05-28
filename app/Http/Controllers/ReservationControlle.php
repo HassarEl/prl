@@ -164,4 +164,95 @@ class ReservationControlle extends Controller
     {
         return view('reservations.index');
     }
+
+    // public function search(Request $request){
+    //     if($request->ajax()){
+    //         $datas = Reservation::where('id', 'like', '%'.$request->search.'%')
+    //         ->orwhere('date_reservation', 'like', '%'.$request->search.'%')
+    //         ->get();
+
+    //         $output = '';
+
+    //         if(count($data) > 0){
+
+
+    //             $output = '
+    //             <table class="table table-striped table-hover">
+    //             <thead>
+    //               <tr>
+    //                 <th>Name</th>
+    //                 <th>Email</th>
+    //                 <th>Date Reservation</th>
+    //                 <th>Heure Début</th>
+    //                 <th>Durée</th>
+    //                 <th>Titre</th>
+    //                 <th>Acction</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>';
+
+    //                 foreach($datas as $data){
+    //                     $output .='
+    //                     <tr>
+    //                 <th>
+    //                     foreach($users as $user){
+    //                         if($data->user_id == $user->id)
+    //                             {$user->name}
+    //                     }
+
+    //                 </th>
+    //                 <td>
+    //                     foreach($users as $user){
+    //                         if($data->user_id == $user->id)
+    //                             {$user->email}
+    //                     }
+
+    //                 </td>
+    //                 <td>$data->date_reservation</td>
+    //                 <td>$data->heureDebut</td>
+    //                 <td>
+    //                     foreach($rooms as $room){
+    //                         if($data->room_id == null)
+    //                             { "Not Define" }
+    //                             break($data->room_id == null)
+
+    //                         elseif($data->room_id == $room->id)
+    //                             { $room->name }
+    //                     }
+    //                 </td>
+    //                 <td>
+    //                     if($data->status == "refuse")
+    //                     {
+    //                        <h5 class="card-text"><span class="badge text-bg-danger">{{$data->status}}</span></h5> 
+    //                     }
+    //                     elseif ($data->status == "accepte")
+    //                     {
+    //                         <h5 class="card-text"><span class="badge text-bg-success">{{$data->status}}</span></h5> 
+    //                     }
+    //                     else {
+    //                         <h5 class="card-text"><span class="badge text-bg-warning">{{$data->status}}</span></h5> 
+    //                     }
+    //                 </td>
+    //                 <td>
+    //                     <form action="{{url("/reservation/" . $data->id)}}" method="get">
+    //                         @csrf
+    //                         <button class="btn btn-outline-primary" type="submit"> Voire</button>
+    //                     </form>
+    //                 </td>
+    //               </tr>';
+    //                 }
+                  
+                  
+    //            $output .= '
+    //            </tbody>
+    //         </table>
+    //             ';
+
+
+    //         } else{
+    //             $output .= 'No results found';
+    //         }
+    //     }
+    //     return $output;
+    // }
 }
