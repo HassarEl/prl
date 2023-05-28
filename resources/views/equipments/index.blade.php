@@ -19,6 +19,8 @@
 
 @section('content')
 <div class="content">
+  <div class="container-fluid">
+
   
   @if (session()->has('message'))
   <div class="alert alert-success  alert-dismissible fade show" role="alert">
@@ -34,7 +36,7 @@
     </div>
 
     <div class="card-body p-0">
-      <table class="table table-striped projects">
+      <table class="table table-striped">
           <thead>
               <tr>
                   <th>
@@ -70,23 +72,26 @@
                   </td>
                   <td>
                     <div class="row">
-                      <div class="col-4">
-                        <a  class="btn btn-info" href="{{ url('/equipment/' . $equipment->id) }}">
-                          voir
-                        </a>
+                      <div class="col-md-3">
+                        <form method="get" action="{{ url('/equipment/' . $equipment->id) }}">
+                          @csrf
+                          <input type="submit" class="btn btn-success" value="Voire">
+                        </form>
                       </div>
-                      <div class="col-4">
-                        <a class="btn btn-success" href="{{ url('/equipment/' . $equipment->id . '/edit/') }}">
-                          Modifier
-                        </a>
+                      <div class="col-md-3">
+                        <form action="{{ url('/equipment/' . $equipment->id . '/edit/') }}" method="get">
+                          @csrf
+                          <input type="submit" class="btn btn-primary" value="Modifier">
+                        </form>
                       </div>
-                      <div class="col-4">
+                      <div class="col-md-3">
                         <form method="POST" action="{{ url('/equipment' . '/' . $equipment->id) }}" accept-charset="UTF-8">
                           {{ method_field('DELETE') }}
                           {{ csrf_field() }}
                           <button type="submit" class="btn btn-danger" title="Delete Doctor" onclick="return confirm('Confirm delete?')">Delete</button>
-                      </form>
+                        </form>
                       </div>
+                      
                     </div>
                   </td>
               </tr>    
@@ -97,6 +102,7 @@
     </div>
 
   </div>
+</div>
 </div>
 
 @endsection

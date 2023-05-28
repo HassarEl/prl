@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\ReservationControlle;
+use App\Http\Controllers\AdministratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Administrators
+
+Route::get('/admin', [AdministratorController::class, 'index'])->name('administrator.index');
+Route::get('/admin/create', [AdministratorController::class, 'create'])->name('administrator.create');
 
 // Equipement Route
 Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment.index');

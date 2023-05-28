@@ -12,22 +12,63 @@
                 </li>
 
                 @can('isAdmin')
+                {{-- Administrator --}}
+
+                <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button" data-toggle="collapse"  href="#admin">
+                        <i class="bi bi-lock"></i>
+                        <span class="pl-4 sidebar-menu-text">Administrator</span>
+                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
+                    </a>
+                    <ul class="sidebar-submenu collapse" id="admin">
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="{{ route('administrator.index') }}">
+                                <i class="bi bi-caret-right"></i> 
+                                <span class="sidebar-menu-text">Personneles</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{ route('administrator.create') }}">
+                                <i class="bi bi-plus-circle"></i>
+                                <span class="sidebar-menu-text">Create user</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="#">
+                                <i class="bi bi-plus-circle"></i>
+                                <span class="sidebar-menu-text">Affectation</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
 
                 {{-- Rooms --}}
                 <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button" href="{{url('/salles')}}">
-                        <i class="bi bi-caret-right-fill"></i>
-                        <span class="pl-4 sidebar-menu-text"> Salles</span>
+                    <a class="sidebar-menu-button" data-toggle="collapse"  href="#salle">
+                        <i class="bi bi-node-plus"></i>
+                        <span class="pl-4 sidebar-menu-text">Salles</span>
+                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
                     </a>
+                    <ul class="sidebar-submenu collapse" id="salle">
+                        <li class="sidebar-menu-item active">
+                            <a class="sidebar-menu-button" href="{{route('salles')}}">
+                                <i class="bi bi-caret-right-fill"></i> 
+                                <span class="sidebar-menu-text">Voire Salles</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{route('createSalle')}}">
+                                <i class="bi bi-plus-circle"></i>
+                                <span class="sidebar-menu-text">Ajouter Salle</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
-                <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button" href="{{route('createSalle')}}">
-                        <i class="bi bi-plus-circle"></i>
-                        <span class="pl-4 sidebar-menu-text">Ajouter Salles</span>
-                    </a>
-                </li>
-
+                {{-- Services --}}
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" data-toggle="collapse"  href="#service">
                         <i class="bi bi-person-fill-gear"></i>
@@ -50,11 +91,11 @@
                     </ul>
                 </li>
 
-
+                {{-- Equipments --}}
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" data-toggle="collapse"  href="#reservation_menu">
                         <i class="bi bi-node-plus"></i>
-                        <span class="pl-4 sidebar-menu-text">Equipment au salles</span>
+                        <span class="pl-4 sidebar-menu-text">Contenu Salle</span>
                         <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
                     </a>
                     <ul class="sidebar-submenu collapse" id="reservation_menu">
@@ -73,6 +114,7 @@
                     </ul>
                 </li>
 
+                {{-- Appoitments --}}
                 <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" href="{{route('reservation.index')}}">
                         <i class="bi bi-grid-1x2"></i>
@@ -118,20 +160,30 @@
 
                 {{-- Menu SideBar --}}
 
-                
-                <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button"  href="{{route('equipment.index')}}">
-                        <i class="bi bi-list-nested"></i>
-                        <span class="pl-4 sidebar-menu-text">Equipments</span>
-                    </a>
-                </li>
 
                 <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button"  href="{{route('equipment.create')}}">
-                        <i class="bi bi-grid-fill"></i>
-                        <span class="pl-4 sidebar-menu-text">Ajouter Equipments</span>
+                    <a class="sidebar-menu-button" data-toggle="collapse"  href="#equipment">
+                        <i class="bi bi-node-plus"></i>
+                        <span class="pl-4 sidebar-menu-text">Equipments</span>
+                        <span class="ml-auto"><i class="bi bi-caret-down-fill"></i></span>
                     </a>
+                    <ul class="sidebar-submenu collapse" id="equipment">
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{route('equipment.index')}}">
+                                <i class="bi bi-plus-circle"></i> 
+                                <span class="sidebar-menu-text">Voire Equipments</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item">
+                            <a class="sidebar-menu-button" href="{{route('equipment.create')}}">
+                                <i class="bi bi-grid-fill"></i>
+                                <span class="sidebar-menu-text">Ajoute Equipment</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
+
                 @endcan
 
                 @can('isResponsible')

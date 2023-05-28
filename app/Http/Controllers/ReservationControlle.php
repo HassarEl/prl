@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\User;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationControlle extends Controller
 {
@@ -36,13 +39,16 @@ class ReservationControlle extends Controller
         // dd(auth()->user()->email);
 
         if($request->file('file') != null){
+            
             $file = $request->file('file');
             $fileName = time().'_'.$file->getClientOriginalName();
             $file->move(\public_path('assets/files/piecejoin/'), $fileName);
 
             $reservation->piece_jointe = $fileName;
 
+
         } else {
+
             $reservation->piece_jointe = null;
         }
     
@@ -87,10 +93,23 @@ class ReservationControlle extends Controller
     public function update(Request $request, string $id)
     {
         // dd($request);
+        $rooms = Room::all();
 
         $reservation = Reservation::find($id);
 
         $reservation->room_id = $request->salle;
+        
+        $user = Auth::user()->find($reservation->user_id);
+
+        // dd($user->email);
+
+        if($request->status == 'accepte')
+        {
+            Mail::to(
+                $user->email
+            )->send(new ConfirmationMail($user), compact('reservation', 'rooms')); 
+        }
+        
         $reservation->status = $request->status;
 
         $reservation->save();
