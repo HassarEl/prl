@@ -123,6 +123,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-menu-item">
+                    <a class="sidebar-menu-button" href="{{route('reservation.create')}}">
+                        <i class="bi bi-grid-1x2"></i>
+                        <span class="pl-4 sidebar-menu-text">Create Reservations</span>
+                    </a>
+                </li>
+
                 {{-- <li class="sidebar-menu-item">
                     <a class="sidebar-menu-button" data-toggle="collapse"  href="#reservation_menu">
                         <i class="bi bi-calendar-day"></i>

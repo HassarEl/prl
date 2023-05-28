@@ -22,6 +22,16 @@
 @endsection
 
 @section('content')
+<div class="container">
+    <div class="row">
+        @if (session()->has('message'))
+        <div class="alert alert-success  alert-dismissible fade show" role="alert">
+            {{session()->get('message')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
+        </div>
+    @endif
+    </div>
+</div>
     <div class="col">
         <div class="card">
             <div class="card-header">

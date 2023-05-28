@@ -62,6 +62,8 @@ Route::delete('/salles/{id}', [RoomController::class, 'destroy'])->name('salle.d
 
 Route::post('/', [ReservationControlle::class, 'store'])->name('reservation.store');
 Route::get('/reservation', [ReservationControlle::class, 'index'])->name('reservation.index');
+Route::get('/reservation/create', [ReservationControlle::class, 'create'])->name('reservation.create');
+Route::post('/reservation/create', [ReservationControlle::class, 'adminstore'])->name('reservation.adminstore');
 Route::get('/reservation/{id}', [ReservationControlle::class, 'show'])->name('reservation.show');
 Route::post('/reservation/{id}/reservate', [ReservationControlle::class, 'update'])->name('reservation.update');
 
