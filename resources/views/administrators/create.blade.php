@@ -19,7 +19,7 @@
                         <h5 class="card-title">Create Form</h5>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" class="forms-sample">
+                        <form action="{{ route('administrator.store') }}" method="post" class="forms-sample">
                             @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-sm-3 col-form-label">Name</label>
@@ -31,12 +31,19 @@
                               <div class="form-group row">
                                 <label for="name" class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-9">
-                                  <input type="email" class="form-control" name="email" id="exampleInputUsername2" placeholder="Email Equipment" required>
+                                  <input type="email" class="form-control" name="email" id="exampleInputUsername2" placeholder="Email User" required>
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="phone" id="exampleInputUsername2" placeholder="Phone Number">
                                 </div>
                               </div>
     
                               <div class="form-group row">
-                                <label for="name" class="col-sm-3 col-form-label">Role</label>
+                                <label for="profil" class="col-sm-3 col-form-label">Role</label>
                                 <div class="col-sm-4">
                                   <select class="form-select" name="profil" id="profil">
                                     <option selected>Role User</option>

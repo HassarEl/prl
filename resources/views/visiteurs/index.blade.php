@@ -49,8 +49,10 @@
 	<nav class="gtco-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2 col-xs-12">
-					<div id="gtco-logo"><a href="{{url('/')}}">Roayome<em>Du</em>MAROC</a></div>
+				<div class="col-sm-2 col-xs-12 d-flex justify-content-center align-items-center">
+					<a href="{{url('/')}}">
+						<img style="height: 100px;" src="{{ asset('assets/images/maroc.png') }}" alt="">
+					</a>
 				</div>
 				<div class="col-sm-10 text-right menu-1 main-nav">
 

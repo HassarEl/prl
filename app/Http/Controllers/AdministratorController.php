@@ -33,7 +33,24 @@ class AdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'profil' => 'required',
+            'phone' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'profil' => $request->profil,
+            'phone' => $request->phone,
+            'password' => bcrypt($request->password)
+        ]);
+
+        return redirect()->route('administrator.index')->with('message', 'user had been added successfully');
     }
 
     /**

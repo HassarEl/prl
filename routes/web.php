@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin', [AdministratorController::class, 'index'])->name('administrator.index');
     Route::get('/admin/create', [AdministratorController::class, 'create'])->name('administrator.create');
+    Route::post('/admin/create', [AdministratorController::class, 'store'])->name('administrator.store');
     
     // Equipement Route
     Route::get('/equipment', [EquipmentController::class, 'index'])->name('equipment.index');

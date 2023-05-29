@@ -12,7 +12,14 @@
 
 <div class="container">
     <div class="row">
-    
+    <div class="col">
+        @if (session()->has('message'))
+            <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                {{session()->get('message')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" data-bs-target="#my-alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
     </div>
     <div class="row">
         <div class="col">
@@ -53,7 +60,7 @@
                                 {{ $user->profil }}
                             </td>
                             <td>
-                                <form action="{{url('/reservation/' . $user->id)}}" method="get">
+                                <form action="{{url('/' )}}" method="get">
                                     @csrf
                                     <button class="btn btn-outline-primary" type="submit"> Voire</button>
                                 </form>
