@@ -19,7 +19,14 @@ class ReservationControlle extends Controller
     {
         $users = Auth::user()->all();
         $rooms = Room::all();
-        $reservations = Reservation::all();
+        
+        
+        if(auth()->user()->id == Reservation::find(auth()->user()->id)->id && auth()->user()->profil == 'chefService'){
+            $reservations = Reservation::where('user_id', Auth::user()->id)->get();
+        } elseif(auth()->user()->profil == 'admin' ) {
+            $reservations = Reservation::all();
+        }
+        
         return view('reservations.index', compact('reservations', 'users', 'rooms'))->with('reservations', $reservations);
     }
 

@@ -47,9 +47,11 @@
                         <th>Email</th>
                         <th>Date Reservation</th>
                         <th>Heure Début</th>
-                        <th>Durée</th>
-                        <th>Titre</th>
+                        <th>Salle</th>
+                        <th>Status</th>
+                        @can('isAdmin')
                         <th>Acction</th>
+                        @endcan
                       </tr>
                     </thead>
                     <tbody>
@@ -90,12 +92,14 @@
                                 <h5 class="card-text"><span class="badge text-bg-warning">{{$data->status}}</span></h5>
                             @endif
                         </td>
+                        @can('isAdmin')
                         <td>
                             <form action="{{url('/reservation/' . $data->id)}}" method="get">
                                 @csrf
                                 <button class="btn btn-outline-primary" type="submit"> Voire</button>
                             </form>
                         </td>
+                        @endcan
                       </tr>
                       @endforeach
                     </tbody>
